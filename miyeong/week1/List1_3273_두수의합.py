@@ -5,7 +5,7 @@ n = int(input()) # 수열의 크기
 a = list(map(int, input().split())) # n개의 서로 다른 양의 정수 a1, a2, ..., an으로 이루어진 수열
 x = int(input()) # ai + aj = x 
 cnt = 0 # 주어진 조건을 만족하는 쌍의 수 초기 설정값
-for i in range(len(a)): # 수열 a를 반복
+for i in range(len(a)): # 수열 a 반복
     for j in range(i + 1, len(a)): # i번째 다음 수부터 끝까지 반복
         if a[i] + a[j] == x: # i번째 원소와 j번째 원소의 합이 x일 경우
             cnt += 1 # 주어진 조건을 만족하기 때문에 쌍의 수 1 증가
