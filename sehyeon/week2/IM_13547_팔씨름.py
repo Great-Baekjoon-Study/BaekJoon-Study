@@ -21,3 +21,4 @@ for test_case in range(1, T+1):
             result = 'NO'
 
     print(f'#{test_case} {result}')
+    
