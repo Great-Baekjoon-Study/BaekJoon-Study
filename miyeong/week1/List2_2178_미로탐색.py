@@ -1,26 +1,5 @@
-# N, M = map(int, input().split())  # 4 6
-# miro = [list(map(int, input().strip())) for _ in range(N)]
-
-# dx = [-1, 1, 0, 0]
-# dy = [0, 0, -1, 1]
-
-# for _ in range(N * M):
-#     for i in range(N):
-#         for j in range(M):
-#             # 방문 가능한 칸(0은 벽)
-#             if miro[i][j] > 0:
-#                 for k in range(4):
-#                     ni = i + dx[k]
-#                     nj = j + dy[k]
-#                     if 0 <= ni < N and 0 <= nj < M:
-#                         if miro[ni][nj] == 1:
-#                             miro[ni][nj] = miro[i][j] + 1
-
-# print(miro[N-1][M-1])
-
-
-n, m = map(int, input().split())
-maze = [list(map(int, input().strip())) for _ in range(n)]
+n, m = map(int, input().split()) # 미로의 세로 크기, 가로 크기
+maze = [list(map(int, input().strip())) for _ in range(n)] # 미로 정보를 2차원 리스트로 저장
 
 # 델타 (상, 하, 좌, 우)
 dx = [-1, 1, 0, 0]
@@ -41,10 +20,11 @@ while queue:
         nx = x + dx[i]
         ny = y + dy[i]
         
-        # 범위 안이고, 길(1)인 경우
+        # 범위 안이고, 아직 방문하지 않았고 길(1)인 경우
         if 0 <= nx < n and 0 <= ny < m and maze[nx][ny] == 1:
-            maze[nx][ny] = maze[x][y] + 1  # 거리 갱신
+            maze[nx][ny] = maze[x][y] + 1  # 거리 갱신 = 이전 칸 거리 + 1
             queue.append((nx, ny))         # 다음에 탐색할 위치 저장
 
 # 결과 출력
+# 도착점(맨 오른쪽 아래)의 값 출력
 print(maze[n-1][m-1])
