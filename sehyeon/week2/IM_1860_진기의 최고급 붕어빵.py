@@ -13,7 +13,7 @@ for test_case in range(1, T+1):
     for i in range(N):  
         t = arrive[i] 
         # t초까지 만들어진 붕어빵 총 개수 
-        # # 완성된 판 수 * 판당 개수         
+        # 완성된 판 수 * 판당 개수         
         bread = (t // M) * K  
         # 지금까지 온 손님 수 == 붕어빵이 총 몇 개 필요한가?   
         customer = i + 1  
