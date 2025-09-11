@@ -29,7 +29,7 @@ for tc in range(1, T+1):
     # 하 좌 상 우
     # 어찌됏건 0,0에서 시작하고
     # 사과는 외곽에서는 나오지 않으니
-    # 방향은 아래로 보면서 시작하면 됨
+    # 방향은 오른쪽으로 보면서 시작하면 됨
     for apple_idx_i, apple_idx_j in P:
         # p를 돌면서 사과의 좌표를 받아옴
         if direction == 1:
