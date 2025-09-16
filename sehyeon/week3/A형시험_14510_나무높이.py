@@ -17,7 +17,9 @@ for test_case in range(1, T+1):
     days = 0
     while True:
         # D일 동안 홀수날 짝수날 개수
+        # 홀수날 => 5일 => (5+1) // 2 = 3개
         odd_days = (days + 1) // 2  
+        # 짝수날 => 3일 => 3 // 2 = 1개
         even_days = days // 2       
         # D일 동안 가능한 총 성장량 = 홀수 날 개수 + 짝수 날 개수 * 2
         capacity = odd_days + (even_days * 2)
