@@ -16,11 +16,12 @@ def baking():
     arrive_time_list.sort()
 
     for i in range(N):
-        num_baking =arrive_time_list[i] // M #만드는 동작 가능한 횟수
-        if num_baking > 0:
-            if num_baking *K < i+1: #baking 한 게 i보다 크면
+        num_baking =arrive_time_list[i] // M #손님당 M초에 K개를 만드는 동작 1번, 누적
+        if num_baking > 0: #무조건 동작한다.
+            if num_baking *K < i+1: #붕어빵 총 개수가 i+1(총사람수)보다 작으면
                 ###i+1은 사람 수가 아니다. arrive list가 정렬되어 있지 않으므로
-                return 'Impossible'
+                
+                return 'Impossible' #N,M,K가 1보다 크기 때문에 num_baking <=0일 수가 없음. 무조건 크다.
         else:
             return 'Impossible'
 
